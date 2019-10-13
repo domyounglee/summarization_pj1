@@ -1,0 +1,8 @@
+sudo nvidia-docker run -u 0 --net=host \
+ --privileged \
+ -v $HOME/dml/summarization/:/root/workspace/ \
+ -it -p 8899:8899 --name summarization --rm -e LC_ALL=C.UTF-8 -e DISPLAY=$DISPLAY \
+tensorflow/tensorflow:1.12.3-gpu-py3 \
+ /bin/bash
+
+
